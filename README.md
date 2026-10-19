@@ -48,7 +48,8 @@ Simple Voice — модификация для Minecraft Java Edition, позв�
 
 📄 Лицензия
 
-Информация о лицензии и условиях распространения должна быть указана отдельно. До её добавления не предполагайте, что файлы можно свободно распространять или изменять.
+Simple Voice is licensed under the MIT License. You are free to use, modify, and distribute the source code, provided that the copyright notice and license text are retained.
+Simple Voice распространяется по лицензии MIT. Вы можете свободно использовать, изменять и распространять исходный код при сохранении уведомления об авторских правах и текста лицензии.
 
 👨‍💻 Автор
 
