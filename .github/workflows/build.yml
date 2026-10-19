@@ -26,6 +26,17 @@ jobs:
         with:
           gradle-version: 9.2.0
 
+      # Определяем реальный пакет Concentus в jar и правим импорты (страховка)
+      - name: Detect Concentus package
+        working-directory: ${{ env.PROJECT_DIR }}
+        run: |
+          curl -sSfL -o /tmp/c.jar https://repo.maven.apache.org/maven2/io/github/jaredmdobson/concentus/1.0.2/concentus-1.0.2.jar
+          CLS=$(unzip -Z1 /tmp/c.jar | grep 'OpusEncoder.class' | head -1)
+          PKG=$(dirname "$CLS" | tr / .)
+          echo "Concentus package: $PKG"
+          grep -rl 'concentus' src/main/java | xargs sed -i -E "s#(org\.concentus|io\.github\.jaredmdobson\.concentus)\.Opus#$PKG.Opus#g"
+          grep -rn 'concentus' src/main/java || true
+
       - name: Build
         working-directory: ${{ env.PROJECT_DIR }}
         run: gradle build --no-daemon
