@@ -1,0 +1,57 @@
+name: build-from-zip
+
+# Положите в корень репозитория архив с исходниками (любое имя, например SimpleVoice-1.0.0-source.zip)
+# и этот файл как .github/workflows/build.yml. Имя архива не важно.
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { dir: mc-1.21.11, java: 21, gradle: "9.2.0" }
+          - { dir: mc-26.1,    java: 25, gradle: current }
+          - { dir: mc-26.2,    java: 25, gradle: current }
+          - { dir: mc-26.3,    java: 25, gradle: current }
+    steps:
+      - uses: actions/checkout@v4
+      - name: Распаковать архив
+        run: |
+          ZIP=$(ls -1 *.zip 2>/dev/null | head -1 || true)
+          if [ -z "$ZIP" ]; then
+            echo "::error::В корне репозитория нет .zip архива. Загрузите архив с исходниками."
+            ls -la
+            exit 1
+          fi
+          echo "Архив: $ZIP"
+          rm -rf unpacked
+          unzip -q "$ZIP" -d unpacked
+          GRADLE=$(find unpacked -path '*/mc-1.21.11/build.gradle' | head -1)
+          if [ -z "$GRADLE" ]; then
+            echo "::error::В архиве не найдена папка mc-1.21.11. Проверьте, что загружен именно архив мода."
+            find unpacked -maxdepth 3
+            exit 1
+          fi
+          ROOT=$(cd "$(dirname "$GRADLE")/.." && pwd)
+          echo "ROOT=$ROOT" >> "$GITHUB_ENV"
+          echo "Корень проекта: $ROOT"
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ matrix.java }}
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: ${{ matrix.gradle }}
+      - name: Build ${{ matrix.dir }}
+        working-directory: ${{ env.ROOT }}/${{ matrix.dir }}
+        run: gradle build --no-daemon
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jar-${{ matrix.dir }}
+          path: |
+            ${{ env.ROOT }}/${{ matrix.dir }}/build/libs/*.jar
+            !${{ env.ROOT }}/${{ matrix.dir }}/build/libs/*-sources.jar
