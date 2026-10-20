@@ -1,63 +1,38 @@
-🎙️ Simple Voice
+Simple Voice
 
-Simple Voice — модификация для Minecraft Java Edition, позволяющая игрокам общаться голосом прямо во время игры.
+A Minecraft project developed for Minecraft Java Edition 1.21.11.
 
-Общайтесь с друзьями, исследуйте мир и играйте вместе, используя голосовое взаимодействие вместо постоянного общения в чате.
+📌 About
 
-✨ Возможности
+Simple Voice v1.2 is a community-developed Minecraft project by "izver2004-prog" (https://github.com/izver2004-prog).
 
-- 🎤 Голосовое общение между игроками.
-- 🎮 Общение непосредственно во время игры.
-- 👥 Удобная игра с друзьями и на серверах.
-- 🖥️ Поддержка Minecraft Java Edition.
-- 🎨 Дополнительные файлы оформления и модификации интерфейса.
+This repository contains the project's source code and related files.
 
-📦 Файлы проекта
+🎮 Compatibility
 
-В репозитории доступны следующие архивы:
+- Minecraft: Java Edition 1.21.11
+- Project version: 1.2
 
-- "simplevoice-jar.zip" — архив с файлами Simple Voice.
-- "SimpleVoice-BlackTheme.zip" — файлы оформления в тёмной теме.
-- "voicemod.zip" — дополнительные файлы проекта.
+📥 Installation
 
-Содержимое архивов и требования к установке рекомендуется проверить перед использованием.
+1. Open the "Releases" (https://github.com/izver2004-prog/Simple-Voice-v1.2-1.21.11/releases) page.
+2. Download the appropriate release file, if available.
+3. Follow the installation instructions provided with the release.
 
-🚀 Установка
+🛠️ Development
 
-1. Скачайте нужный архив из раздела файлов репозитория.
-2. Распакуйте его в отдельную папку.
-3. Ознакомьтесь с содержимым и инструкциями, если они есть.
-4. Убедитесь, что файлы подходят для вашей версии Minecraft.
-5. Запустите игру и проверьте работоспособность модификации.
+Contributions, suggestions, and bug reports are welcome. Please open an issue in this repository to report a problem or suggest an improvement.
 
-Важно: точный способ установки зависит от содержимого архива и используемого загрузчика модификаций.
+📄 License
 
-🧩 Совместимость
+This project is licensed under the MIT License. See the "LICENSE" (LICENSE) file for details.
 
-- Игра: Minecraft Java Edition
-- Версия проекта: 1.2
-- Целевая версия Minecraft: 1.21.11
+👤 Author
 
-Для корректной работы убедитесь, что версия игры соответствует требованиям файлов проекта.
+izver2004-prog
 
-🛠️ Разработка
-
-Проект развивается и может получать обновления, исправления ошибок и новые возможности.
-
-Если вы нашли ошибку или хотите предложить улучшение, создайте Issue в репозитории.
-
-📄 Лицензия
-
-Simple Voice is licensed under the MIT License. You are free to use, modify, and distribute the source code, provided that the copyright notice and license text are retained.
-
-Simple Voice распространяется по лицензии MIT. Вы можете свободно использовать, изменять и распространять исходный код при сохранении уведомления об авторских правах и текста лицензии.
-
-👨‍💻 Автор
-
-izver2004
-
-GitHub: "@izver2004-prog" (https://github.com/izver2004-prog)
+- GitHub: "@izver2004-prog" (https://github.com/izver2004-prog)
 
 ---
 
-⭐ Если проект оказался полезным, поставьте звезду репозиторию!
+⭐ If you find this project useful, consider giving the repository a star!
