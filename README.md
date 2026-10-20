@@ -15,7 +15,7 @@ This repository contains the project's source code and related files.
 
 📥 Installation
 
-1. Open the "Releases" (https://github.com/izver2004-prog/Simple-Voice-v1.2-1.21.11/versions) page.
+1. Open the "Releases" (https://github.com/izver2004-prog/Simple-Voice-v1.2-1.21.11/tree/main/versions) page.
 2. Download the appropriate release file, if available.
 3. Follow the installation instructions provided with the release.
 
